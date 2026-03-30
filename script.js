@@ -1,44 +1,61 @@
-const chatInput = document.getElementById('chat-input');
-const chatSend = document.getElementById('chat-send');
-const chatContent = document.getElementById('chat-content');
+// Toggle Read More
+function toggleReadMore(id, btn) {
+  const element = document.getElementById(id);
+  if (element.style.display === "none" || element.style.display === "") {
+    element.style.display = "block";
+    btn.textContent = "Read Less";
+  } else {
+    element.style.display = "none";
+    btn.textContent = "Read More";
+  }
+}
 
-chatSend.addEventListener('click', async () => {
-  const message = chatInput.value.trim();
-  if (!message) return;
+// Typing Effect
+const aboutSpan = document.querySelector("#about p span");
+if (aboutSpan) {
+  let txt = aboutSpan.textContent;
+  aboutSpan.textContent = "";
+  let i = 0;
+  function type() {
+    if (i < txt.length) {
+      aboutSpan.textContent += txt.charAt(i);
+      i++;
+      setTimeout(type, 30);
+    }
+  }
+  type();
+}
 
-  // User message
-  const userMsg = document.createElement('p');
-  userMsg.textContent = `You: ${message}`;
-  chatContent.appendChild(userMsg);
-  chatInput.value = "";
-  chatContent.scrollTop = chatContent.scrollHeight;
+// AI Chat Function (REAL AI READY)
+async function sendChat() {
+  const input = document.getElementById("chat-input");
+  const messages = document.getElementById("chat-messages");
 
-  // Show processing message
-  const botMsg = document.createElement('p');
-  botMsg.textContent = "AI: thinking...";
-  botMsg.style.color = "blue";
-  chatContent.appendChild(botMsg);
+  const userText = input.value;
+  if (!userText) return;
+
+  messages.innerHTML += `<div><b>You:</b> ${userText}</div>`;
+
+  input.value = "";
 
   try {
-    // Using Hugging Face Inference API (free models endpoint)
-    const response = await fetch("https://api-inference.huggingface.co/models/gpt2", {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Authorization": "Bearer YOUR_API_KEY_HERE",
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
-        inputs: message,
-        parameters: { max_new_tokens: 60 }
+        model: "gpt-4o-mini",
+        messages: [{ role: "user", content: userText }]
       })
     });
 
     const data = await response.json();
-    if (data.error) {
-      botMsg.textContent = "AI: Sorry, model could not process your request.";
-    } else {
-      botMsg.textContent = "AI: " + (data[0]?.generated_text ?? "Hmm, I couldn't think of a response.");
-    }
+    const reply = data.choices[0].message.content;
 
-    chatContent.scrollTop = chatContent.scrollHeight;
-  } catch (err) {
-    botMsg.textContent = "AI: Error connecting to free AI engine.";
+    messages.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
+  } catch (error) {
+    messages.innerHTML += `<div><b>AI:</b> Error connecting to AI</div>`;
   }
-});
+}
