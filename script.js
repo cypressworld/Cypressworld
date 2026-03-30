@@ -71,6 +71,5 @@ document.addEventListener("DOMContentLoaded", () => {
     moreText.style.display = "none";
     btn.textContent = "Read More";
   }
-  }
-
+}
 });
