@@ -3,252 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CypressWorld - Wisdom Amaju</title>
-  <link rel="stylesheet" href="style.css?v=4">
+  <title>CypressWorld - Wisdom Amaju | Full-Stack & DevOps Mentor</title>
+  <link rel="stylesheet" href="style.css?v=5">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Header -->
-<header>
-  <img src="assets/avatar.png" alt="Wisdom Amaju" class="avatar">
-  <h1>Wisdom Amaju - CypressWorld</h1>
-  <p>Full-Stack Developer | DevOps Engineer | AI & Cloud Enthusiast | Tech Mentor</p>
+<nav class="navbar">
+  <div class="nav-logo">Cypress<span>World</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="main-header">
+  <div class="header-overlay">
+    <div class="avatar-container">
+      <img src="assets/avatar.png" alt="Wisdom Amaju" class="avatar">
+      <div class="status-badge">Available for Mentorship</div>
+    </div>
+    <h1>Wisdom Amaju</h1>
+    <p class="brand-title">Founder of CypressWorld</p>
+    <p class="specialties">Full-Stack Developer | DevOps Engineer | AI & Cloud Enthusiast | Tech Mentor</p>
+  </div>
 </header>
 
-<!-- About Me -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am Wisdom Amaju, a Full-Stack Developer, DevOps Engineer, and Tech Mentor passionate about building scalable, intelligent digital solutions. I help individuals, startups, and organizations transform ideas into real-world products while mentoring the next generation of tech professionals.
-  <!-- Read More Button goes here -->
-    <button onclick="toggleReadMore('more-about', this)">Read More</button>
-    
-    <!-- Hidden extra content -->
-    <span id="more-about" class="read-more">
-      With deep expertise across frontend, backend, DevOps, cloud computing, cybersecurity, and artificial intelligence, I help individuals, startups, and organizations transform ideas into fully functional products.
-
-      I don’t just build applications — I design systems that scale, automate infrastructure, optimize performance, and integrate intelligent decision-making using AI.
-
-      Through CypressWorld, I also train and mentor aspiring developers, engineers, and tech professionals, equipping them with real-world skills across software engineering, cloud platforms, data science, and emerging technologies.
-
-      My mission is simple: to empower people with the skills, tools, and systems needed to thrive in the modern tech ecosystem.
-    </span>
+<section id="about" class="about-container">
+  <div class="section-header">
+    <h2>About Me</h2>
+    <div class="accent-line"></div>
+  </div>
   
-  </p>
+  <div class="about-card">
+    <p class="intro-text">
+      I am Wisdom Amaju, a Full-Stack Developer, DevOps Engineer, and Tech Mentor passionate about building scalable, intelligent digital solutions. I help individuals, startups, and organizations transform ideas into real-world products while mentoring the next generation of tech professionals.
+    </p>
+
+    <div class="read-more-wrapper">
+      <button class="btn-secondary" onclick="toggleReadMore('more-about', this)">Read More</button>
+      <div id="more-about" class="read-more">
+        <p>With deep expertise across frontend, backend, DevOps, cloud computing, cybersecurity, and artificial intelligence, I help individuals, startups, and organizations transform ideas into fully functional products.</p>
+        <p>I don’t just build applications — I design systems that scale, automate infrastructure, optimize performance, and integrate intelligent decision-making using AI.</p>
+        <p>Through CypressWorld, I also train and mentor aspiring developers, engineers, and tech professionals, equipping them with real-world skills across software engineering, cloud platforms, data science, and emerging technologies.</p>
+        <p>My mission is simple: to empower people with the skills, tools, and systems needed to thrive in the modern tech ecosystem.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Courses Section -->
-<section id="courses">
-  <h2>Courses & Skills</h2>
 
-  <!-- Faculty 1: Software Development -->
-  <div class="faculty">
-    <h3>1. Software Development (The Core)</h3>
-    <ul>
-      <li><span>Java SE (Standard Edition)</span><button onclick="toggleReadMore('java-se', this)">Read More</button><p id="java-se" class="read-more">Core Java programming: OOP, data types, loops, exception handling, and best practices for scalable applications.</p></li>
-      <li><span>Java EE (Enterprise Edition)</span><button onclick="toggleReadMore('java-ee', this)">Read More</button><p id="java-ee" class="read-more">Enterprise Java for building web applications with servlets, JSP, EJB, and application servers.</p></li>
-      <li><span>Spring Boot Framework</span><button onclick="toggleReadMore('spring', this)">Read More</button><p id="spring" class="read-more">Rapid development framework for building production-ready Java applications with embedded servers and microservices architecture.</p></li>
-      <li><span>Hibernate & JPA</span><button onclick="toggleReadMore('hibernate', this)">Read More</button><p id="hibernate" class="read-more">Object-relational mapping (ORM) for Java applications, managing database persistence efficiently.</p></li>
-      <li><span>Python for Beginners</span><button onclick="toggleReadMore('python-beg', this)">Read More</button><p id="python-beg" class="read-more">Introduction to Python programming: variables, loops, functions, file handling, and foundational concepts.</p></li>
-      <li><span>Advanced Python (Metaprogramming)</span><button onclick="toggleReadMore('python-adv', this)">Read More</button><p id="python-adv" class="read-more">Deep dive into Python advanced features, decorators, metaclasses, generators, and dynamic programming.</p></li>
-      <li><span>Flask Web Development</span><button onclick="toggleReadMore('flask', this)">Read More</button><p id="flask" class="read-more">Build lightweight web applications and APIs using Flask, Jinja templates, and Python backend logic.</p></li>
-      <li><span>Django Framework</span><button onclick="toggleReadMore('django', this)">Read More</button><p id="django" class="read-more">Full-featured Python web framework for scalable, secure, and maintainable applications with ORM support.</p></li>
-      <li><span>C# and .NET Core</span><button onclick="toggleReadMore('csharp', this)">Read More</button><p id="csharp" class="read-more">Build cross-platform applications using C# and .NET Core, including web, desktop, and APIs.</p></li>
-      <li><span>PHP & Laravel</span><button onclick="toggleReadMore('laravel', this)">Read More</button><p id="laravel" class="read-more">Server-side web development with PHP and Laravel framework, focusing on MVC architecture and database integration.</p></li>
-    </ul>
+<section id="courses" class="courses-container">
+  <div class="section-header">
+    <h2>Courses & Skills</h2>
+    <p class="subtitle">Explore our 10 Specialized Technical Faculties</p>
+    <div class="accent-line"></div>
   </div>
 
-  <!-- Faculty 2: Frontend & Modern UI -->
-  <div class="faculty">
-    <h3>2. Frontend & Modern UI</h3>
-    <ul>
-      <li><span>HTML5 & CSS3 Advanced</span><button onclick="toggleReadMore('html-css', this)">Read More</button><p id="html-css" class="read-more">Modern HTML5 structure, CSS3 styling, responsive layouts, Flexbox, Grid, animations, and transitions.</p></li>
-      <li><span>JavaScript (ES6+)</span><button onclick="toggleReadMore('js-es6', this)">Read More</button><p id="js-es6" class="read-more">Modern JavaScript concepts including ES6 syntax, modules, promises, async/await, and DOM manipulation.</p></li>
-      <li><span>React.js</span><button onclick="toggleReadMore('react', this)">Read More</button><p id="react" class="read-more">Component-based UI development with React, state management, hooks, and SPA architecture.</p></li>
-      <li><span>Next.js</span><button onclick="toggleReadMore('next', this)">Read More</button><p id="next" class="read-more">Server-side rendering and static site generation with React using Next.js framework.</p></li>
-      <li><span>Vue.js</span><button onclick="toggleReadMore('vue', this)">Read More</button><p id="vue" class="read-more">Progressive JavaScript framework for building interactive and reactive web interfaces.</p></li>
-      <li><span>Angular Enterprise</span><button onclick="toggleReadMore('angular', this)">Read More</button><p id="angular" class="read-more">Full-featured frontend framework for enterprise applications, using TypeScript and modular architecture.</p></li>
-      <li><span>Tailwind CSS</span><button onclick="toggleReadMore('tailwind', this)">Read More</button><p id="tailwind" class="read-more">Utility-first CSS framework for rapid, responsive, and highly customizable designs.</p></li>
-      <li><span>Bootstrap 5</span><button onclick="toggleReadMore('bootstrap', this)">Read More</button><p id="bootstrap" class="read-more">Frontend UI framework for responsive design, components, and grid system.</p></li>
-      <li><span>TypeScript for Developers</span><button onclick="toggleReadMore('typescript', this)">Read More</button><p id="typescript" class="read-more">Typed superset of JavaScript for scalable, maintainable, and error-resistant code.</p></li>
-      <li><span>Three.js (3D Web Design)</span><button onclick="toggleReadMore('threejs', this)">Read More</button><p id="threejs" class="read-more">3D graphics and animations on the web using WebGL with Three.js library.</p></li>
-    </ul>
-  </div>
+  <div class="faculty-grid">
+    <article class="faculty">
+      <div class="faculty-icon">01</div>
+      <h3>Software Development (The Core)</h3>
+      <ul>
+        <li><div class="list-header"><span>Java SE (Standard Edition)</span><button onclick="toggleReadMore('java-se', this)">Read More</button></div><p id="java-se" class="read-more">Core Java programming: OOP, data types, loops, exception handling, and best practices for scalable applications.</p></li>
+        <li><div class="list-header"><span>Java EE (Enterprise Edition)</span><button onclick="toggleReadMore('java-ee', this)">Read More</button></div><p id="java-ee" class="read-more">Enterprise Java for building web applications with servlets, JSP, EJB, and application servers.</p></li>
+        <li><div class="list-header"><span>Spring Boot Framework</span><button onclick="toggleReadMore('spring', this)">Read More</button></div><p id="spring" class="read-more">Rapid development framework for building production-ready Java applications with embedded servers and microservices architecture.</p></li>
+        <li><div class="list-header"><span>Hibernate & JPA</span><button onclick="toggleReadMore('hibernate', this)">Read More</button></div><p id="hibernate" class="read-more">Object-relational mapping (ORM) for Java applications, managing database persistence efficiently.</p></li>
+        <li><div class="list-header"><span>Python for Beginners</span><button onclick="toggleReadMore('python-beg', this)">Read More</button></div><p id="python-beg" class="read-more">Introduction to Python programming: variables, loops, functions, file handling, and foundational concepts.</p></li>
+        <li><div class="list-header"><span>Advanced Python (Metaprogramming)</span><button onclick="toggleReadMore('python-adv', this)">Read More</button></div><p id="python-adv" class="read-more">Deep dive into Python advanced features, decorators, metaclasses, generators, and dynamic programming.</p></li>
+        <li><div class="list-header"><span>Flask Web Development</span><button onclick="toggleReadMore('flask', this)">Read More</button></div><p id="flask" class="read-more">Build lightweight web applications and APIs using Flask, Jinja templates, and Python backend logic.</p></li>
+        <li><div class="list-header"><span>Django Framework</span><button onclick="toggleReadMore('django', this)">Read More</button></div><p id="django" class="read-more">Full-featured Python web framework for scalable, secure, and maintainable applications with ORM support.</p></li>
+        <li><div class="list-header"><span>C# and .NET Core</span><button onclick="toggleReadMore('csharp', this)">Read More</button></div><p id="csharp" class="read-more">Build cross-platform applications using C# and .NET Core, including web, desktop, and APIs.</p></li>
+        <li><div class="list-header"><span>PHP & Laravel</span><button onclick="toggleReadMore('laravel', this)">Read More</button></div><p id="laravel" class="read-more">Server-side web development with PHP and Laravel framework, focusing on MVC architecture and database integration.</p></li>
+      </ul>
+    </article>
 
-  <!-- Faculty 3: Database Management -->
-  <div class="faculty">
-    <h3>3. Database Management (SQL & NoSQL)</h3>
-    <ul>
-      <li><span>MySQL Administration</span><button onclick="toggleReadMore('mysql', this)">Read More</button><p id="mysql" class="read-more">Design, manage, and optimize MySQL relational databases for performance and security.</p></li>
-      <li><span>PostgreSQL Deep Dive</span><button onclick="toggleReadMore('postgres', this)">Read More</button><p id="postgres" class="read-more">Advanced PostgreSQL techniques including triggers, stored procedures, and indexing strategies.</p></li>
-      <li><span>MongoDB (NoSQL)</span><button onclick="toggleReadMore('mongo', this)">Read More</button><p id="mongo" class="read-more">Document-based database design, queries, and aggregation for flexible data storage.</p></li>
-      <li><span>Redis (Caching)</span><button onclick="toggleReadMore('redis', this)">Read More</button><p id="redis" class="read-more">In-memory data storage and caching strategies for high-performance applications.</p></li>
-      <li><span>Oracle Database</span><button onclick="toggleReadMore('oracle', this)">Read More</button><p id="oracle" class="read-more">Enterprise database management, SQL optimization, and security best practices.</p></li>
-      <li><span>Microsoft SQL Server</span><button onclick="toggleReadMore('mssql', this)">Read More</button><p id="mssql" class="read-more">SQL Server administration, T-SQL queries, and database optimization techniques.</p></li>
-      <li><span>SQLite for Mobile</span><button onclick="toggleReadMore('sqlite', this)">Read More</button><p id="sqlite" class="read-more">Lightweight database for mobile and embedded applications.</p></li>
-      <li><span>Database Design & Normalization</span><button onclick="toggleReadMore('dbdesign', this)">Read More</button><p id="dbdesign" class="read-more">Data modeling, normalization, and schema optimization for scalable databases.</p></li>
-      <li><span>Cassandra for Big Data</span><button onclick="toggleReadMore('cassandra', this)">Read More</button><p id="cassandra" class="read-more">Distributed NoSQL database for high availability and big data analytics.</p></li>
-      <li><span>Neo4j (Graph Databases)</span><button onclick="toggleReadMore('neo4j', this)">Read More</button><p id="neo4j" class="read-more">Graph database for relationships and network analysis in modern applications.</p></li>
-    </ul>
-  </div>
+    <article class="faculty">
+      <div class="faculty-icon">02</div>
+      <h3>Frontend & Modern UI</h3>
+      <ul>
+        <li><div class="list-header"><span>HTML5 & CSS3 Advanced</span><button onclick="toggleReadMore('html-css', this)">Read More</button></div><p id="html-css" class="read-more">Modern HTML5 structure, CSS3 styling, responsive layouts, Flexbox, Grid, animations, and transitions.</p></li>
+        <li><div class="list-header"><span>JavaScript (ES6+)</span><button onclick="toggleReadMore('js-es6', this)">Read More</button></div><p id="js-es6" class="read-more">Modern JavaScript concepts including ES6 syntax, modules, promises, async/await, and DOM manipulation.</p></li>
+        <li><div class="list-header"><span>React.js</span><button onclick="toggleReadMore('react', this)">Read More</button></div><p id="react" class="read-more">Component-based UI development with React, state management, hooks, and SPA architecture.</p></li>
+        <li><div class="list-header"><span>Next.js</span><button onclick="toggleReadMore('next', this)">Read More</button></div><p id="next" class="read-more">Server-side rendering and static site generation with React using Next.js framework.</p></li>
+        <li><div class="list-header"><span>Vue.js</span><button onclick="toggleReadMore('vue', this)">Read More</button></div><p id="vue" class="read-more">Progressive JavaScript framework for building interactive and reactive web interfaces.</p></li>
+        <li><div class="list-header"><span>Angular Enterprise</span><button onclick="toggleReadMore('angular', this)">Read More</button></div><p id="angular" class="read-more">Full-featured frontend framework for enterprise applications, using TypeScript and modular architecture.</p></li>
+        <li><div class="list-header"><span>Tailwind CSS</span><button onclick="toggleReadMore('tailwind', this)">Read More</button></div><p id="tailwind" class="read-more">Utility-first CSS framework for rapid, responsive, and highly customizable designs.</p></li>
+        <li><div class="list-header"><span>Bootstrap 5</span><button onclick="toggleReadMore('bootstrap', this)">Read More</button></div><p id="bootstrap" class="read-more">Frontend UI framework for responsive design, components, and grid system.</p></li>
+        <li><div class="list-header"><span>TypeScript for Developers</span><button onclick="toggleReadMore('typescript', this)">Read More</button></div><p id="typescript" class="read-more">Typed superset of JavaScript for scalable, maintainable, and error-resistant code.</p></li>
+        <li><div class="list-header"><span>Three.js (3D Web Design)</span><button onclick="toggleReadMore('threejs', this)">Read More</button></div><p id="threejs" class="read-more">3D graphics and animations on the web using WebGL with Three.js library.</p></li>
+      </ul>
+    </article>
 
-  <!-- Faculty 4: DevOps & Cloud Infrastructure -->
-  <div class="faculty">
-    <h3>4. DevOps & Cloud Infrastructure</h3>
-    <ul>
-      <li><span>Docker Containerization</span><button onclick="toggleReadMore('docker', this)">Read More</button><p id="docker" class="read-more">Containerize applications for consistent environments and simplified deployment.</p></li>
-      <li><span>Kubernetes (k8s) Orchestration</span><button onclick="toggleReadMore('k8s', this)">Read More</button><p id="k8s" class="read-more">Manage containerized applications at scale using Kubernetes clusters and pods.</p></li>
-      <li><span>Jenkins CI/CD Pipelines</span><button onclick="toggleReadMore('jenkins', this)">Read More</button><p id="jenkins" class="read-more">Automate software build, test, and deployment pipelines with Jenkins.</p></li>
-      <li><span>Terraform (Infrastructure as Code)</span><button onclick="toggleReadMore('terraform', this)">Read More</button><p id="terraform" class="read-more">Provision and manage cloud infrastructure declaratively using Terraform scripts.</p></li>
-      <li><span>Ansible Automation</span><button onclick="toggleReadMore('ansible', this)">Read More</button><p id="ansible" class="read-more">Automate server configuration, deployment, and orchestration with Ansible playbooks.</p></li>
-      <li><span>GitHub Actions</span><button onclick="toggleReadMore('github-actions', this)">Read More</button><p id="github-actions" class="read-more">Automate workflows, CI/CD pipelines, and deployment processes using GitHub Actions.</p></li>
-      <li><span>Prometheus & Grafana Monitoring</span><button onclick="toggleReadMore('monitoring', this)">Read More</button><p id="monitoring" class="read-more">Monitor infrastructure and applications with Prometheus metrics and Grafana dashboards.</p></li>
-      <li><span>Nginx & Apache Web Servers</span><button onclick="toggleReadMore('webserver', this)">Read More</button><p id="webserver" class="read-more">Web server setup, configuration, reverse proxy, and performance optimization.</p></li>
-      <li><span>Linux System Administration (RHCSA)</span><button onclick="toggleReadMore('linux', this)">Read More</button><p id="linux" class="read-more">Administer Linux servers, manage users, permissions, services, and shell scripting.</p></li>
-      <li><span>Shell Scripting (Bash)</span><button onclick="toggleReadMore('bash', this)">Read More</button><p id="bash" class="read-more">Automate tasks, process management, and system operations using Bash scripts.</p></li>
-    </ul>
-  </div>
+    </div>
+</section>
 
-<!-- Faculty 5: Major Cloud Platforms -->
-<div class="faculty">
-  <h3>5. Major Cloud Platforms</h3>
-  <ul>
-    <li><span>AWS Certified Cloud Practitioner</span><button onclick="toggleReadMore('aws-cp', this)">Read More</button><p id="aws-cp" class="read-more">Foundational AWS services, cloud concepts, security, and architecture best practices.</p></li>
-    <li><span>AWS Solutions Architect</span><button onclick="toggleReadMore('aws-sa', this)">Read More</button><p id="aws-sa" class="read-more">Design and implement scalable, secure, and cost-efficient solutions on AWS.</p></li>
-    <li><span>Google Cloud Platform (GCP) Fundamentals</span><button onclick="toggleReadMore('gcp', this)">Read More</button><p id="gcp" class="read-more">Introduction to Google Cloud, virtual machines, storage, networking, and basic deployments.</p></li>
-    <li><span>Google Kubernetes Engine (GKE)</span><button onclick="toggleReadMore('gke', this)">Read More</button><p id="gke" class="read-more">Managed Kubernetes cluster deployment, scaling, and monitoring on Google Cloud.</p></li>
-    <li><span>Azure Fundamentals (AZ-900)</span><button onclick="toggleReadMore('azure', this)">Read More</button><p id="azure" class="read-more">Core Azure services, cloud concepts, security, and governance for beginners.</p></li>
-    <li><span>Azure Developer Associate</span><button onclick="toggleReadMore('azure-dev', this)">Read More</button><p id="azure-dev" class="read-more">Develop, test, and deploy cloud applications using Microsoft Azure platform.</p></li>
-    <li><span>DigitalOcean for Startups</span><button onclick="toggleReadMore('do', this)">Read More</button><p id="do" class="read-more">Leverage DigitalOcean cloud droplets, managed databases, and app platform for startups.</p></li>
-    <li><span>Heroku Deployment</span><button onclick="toggleReadMore('heroku', this)">Read More</button><p id="heroku" class="read-more">Deploy, scale, and maintain web applications on Heroku PaaS platform.</p></li>
-    <li><span>Cloud Security Best Practices</span><button onclick="toggleReadMore('cloud-sec', this)">Read More</button><p id="cloud-sec" class="read-more">Implement security principles, identity management, and compliance in cloud environments.</p></li>
-    <li><span>Serverless Architecture (AWS Lambda/Cloud Functions)</span><button onclick="toggleReadMore('serverless', this)">Read More</button><p id="serverless" class="read-more">Build event-driven, serverless applications using AWS Lambda or cloud functions.</p></li>
-  </ul>
+<div class="action-buttons">
+  <a href="https://wa.me/2347039153600" class="whatsapp-float" target="_blank" title="WhatsApp Wisdom">
+    <span class="icon">💬</span> Chat Me
+  </a>
+  <button id="open-chat" onclick="toggleChat()" title="Open AI Assistant">
+    <span class="icon">🤖</span> AI Help
+  </button>
 </div>
 
-<!-- Faculty 6: Mobile & Desktop Development -->
-<div class="faculty">
-  <h3>6. Mobile & Desktop Development</h3>
-  <ul>
-    <li><span>Flutter (Dart) Cross-Platform</span><button onclick="toggleReadMore('flutter', this)">Read More</button><p id="flutter" class="read-more">Develop cross-platform mobile apps with Flutter and Dart, optimized for iOS and Android.</p></li>
-    <li><span>React Native</span><button onclick="toggleReadMore('react-native', this)">Read More</button><p id="react-native" class="read-more">Build native mobile applications using React Native framework and reusable components.</p></li>
-    <li><span>Android App Development (Kotlin)</span><button onclick="toggleReadMore('android', this)">Read More</button><p id="android" class="read-more">Develop robust Android apps using Kotlin, Android Studio, and modern design patterns.</p></li>
-    <li><span>iOS Development (Swift)</span><button onclick="toggleReadMore('ios', this)">Read More</button><p id="ios" class="read-more">Build native iOS applications using Swift, Xcode, and Apple development tools.</p></li>
-    <li><span>Electron.js (Desktop Apps)</span><button onclick="toggleReadMore('electron', this)">Read More</button><p id="electron" class="read-more">Create cross-platform desktop apps using web technologies with Electron.js.</p></li>
-    <li><span>PWA (Progressive Web Apps)</span><button onclick="toggleReadMore('pwa', this)">Read More</button><p id="pwa" class="read-more">Build installable, offline-capable web applications using service workers and modern web APIs.</p></li>
-    <li><span>Kotlin Multiplatform</span><button onclick="toggleReadMore('kotlin-multi', this)">Read More</button><p id="kotlin-multi" class="read-more">Share code across mobile, desktop, and backend using Kotlin multiplatform projects.</p></li>
-
-    <!-- Faculty 6: Mobile & Desktop Development (continued) -->
-    <li><span>Xamarin Forms</span><button onclick="toggleReadMore('xamarin', this)">Read More</button><p id="xamarin" class="read-more">Build cross-platform mobile apps using C# and Xamarin.Forms with shared codebase.</p></li>
-    <li><span>Unity 3D (Game Dev)</span><button onclick="toggleReadMore('unity', this)">Read More</button><p id="unity" class="read-more">Develop 2D and 3D games for mobile, desktop, and web using Unity engine and C#.</p></li>
-    <li><span>Qt Framework (C++ Desktop)</span><button onclick="toggleReadMore('qt', this)">Read More</button><p id="qt" class="read-more">Build cross-platform desktop applications with C++ and Qt widgets.</p></li>
-  </ul>
-</div>
-
-<!-- Faculty 7: Cybersecurity for Developers -->
-<div class="faculty">
-  <h3>7. Cybersecurity for Developers</h3>
-  <ul>
-    <li><span>Network Security Basics</span><button onclick="toggleReadMore('net-sec', this)">Read More</button><p id="net-sec" class="read-more">Understand firewalls, VPNs, encryption, and secure network design.</p></li>
-    <li><span>Web App Security (OWASP)</span><button onclick="toggleReadMore('owasp', this)">Read More</button><p id="owasp" class="read-more">Protect web applications against XSS, SQLi, CSRF, and other OWASP top threats.</p></li>
-    <li><span>Penetration Testing</span><button onclick="toggleReadMore('pentest', this)">Read More</button><p id="pentest" class="read-more">Learn ethical hacking, vulnerability scanning, and penetration techniques.</p></li>
-    <li><span>Cryptography Fundamentals</span><button onclick="toggleReadMore('crypto', this)">Read More</button><p id="crypto" class="read-more">Understand symmetric/asymmetric encryption, hashing, and secure communication.</p></li>
-    <li><span>Secure API Development</span><button onclick="toggleReadMore('api-sec', this)">Read More</button><p id="api-sec" class="read-more">Implement authentication, authorization, and security best practices for APIs.</p></li>
-    <li><span>SIEM & Monitoring</span><button onclick="toggleReadMore('siem', this)">Read More</button><p id="siem" class="read-more">Monitor security events and alerts using SIEM tools and logs.</p></li>
-    <li><span>Cloud Security</span><button onclick="toggleReadMore('cloud-sec-dev', this)">Read More</button><p id="cloud-sec-dev" class="read-more">Apply cloud security principles in AWS, Azure, and GCP environments.</p></li>
-    <li><span>Incident Response</span><button onclick="toggleReadMore('incident', this)">Read More</button><p id="incident" class="read-more">Handle security breaches, analysis, and mitigation procedures.</p></li>
-    <li><span>Cybersecurity Certifications</span><button onclick="toggleReadMore('cyber-cert', this)">Read More</button><p id="cyber-cert" class="read-more">Prepare for CEH, CompTIA Security+, and CISSP exams.</p></li>
-    <li><span>IoT Security</span><button onclick="toggleReadMore('iot-sec', this)">Read More</button><p id="iot-sec" class="read-more">Secure connected devices, communication protocols, and IoT platforms.</p></li>
-  </ul>
-</div>
-
-<!-- Faculty 8: Data Science & AI -->
-<div class="faculty">
-  <h3>8. Data Science & AI</h3>
-  <ul>
-    <li><span>Python for Data Science</span><button onclick="toggleReadMore('py-ds', this)">Read More</button><p id="py-ds" class="read-more">Data manipulation, Pandas, NumPy, and data visualization with Python.</p></li>
-    <li><span>Machine Learning</span><button onclick="toggleReadMore('ml', this)">Read More</button><p id="ml" class="read-more">Supervised and unsupervised learning, regression, classification, and clustering.</p></li>
-    <li><span>Deep Learning (TensorFlow & PyTorch)</span><button onclick="toggleReadMore('dl', this)">Read More</button><p id="dl" class="read-more">Neural networks, CNNs, RNNs, and deep learning model deployment.</p></li>
-    <li><span>Natural Language Processing (NLP)</span><button onclick="toggleReadMore('nlp', this)">Read More</button><p id="nlp" class="read-more">Text processing, sentiment analysis, chatbots, and language models.</p></li>
-    <li><span>Data Analytics & Visualization</span><button onclick="toggleReadMore('viz', this)">Read More</button><p id="viz" class="read-more">Charts, dashboards, and insights using Matplotlib, Seaborn, and Plotly.</p></li>
-    <li><span>AI in Cloud (AWS/Azure/GCP)</span><button onclick="toggleReadMore('ai-cloud', this)">Read More</button><p id="ai-cloud" class="read-more">Deploy AI/ML models on cloud platforms with serverless or managed services.</p></li>
-    <li><span>Big Data Tools (Hadoop/Spark)</span><button onclick="toggleReadMore('bigdata', this)">Read More</button><p id="bigdata" class="read-more">Processing and analyzing large datasets using Hadoop and Spark frameworks.</p></li>
-    <li><span>Reinforcement Learning</span><button onclick="toggleReadMore('rl', this)">Read More</button><p id="rl" class="read-more">Train AI agents with rewards-based learning for decision-making tasks.</p></li>
-    <li><span>AI Ethics & Governance</span><button onclick="toggleReadMore('ai-ethics', this)">Read More</button><p id="ai-ethics" class="read-more">Responsible AI, bias mitigation, and ethical deployment practices.</p></li>
-    <li><span>Capstone AI Projects</span><button onclick="toggleReadMore('ai-projects', this)">Read More</button><p id="ai-projects" class="read-more">Hands-on projects to build predictive models, recommendation systems, and AI apps.</p></li>
-  </ul>
-</div>
-
-<!-- Faculty 9: Specialized Tech & Emerging Trends -->
-<div class="faculty">
-  <h3>9. Specialized Tech & Emerging Trends</h3>
-  <ul>
-    <li><span>Blockchain & Cryptocurrency</span><button onclick="toggleReadMore('blockchain', this)">Read More</button><p id="blockchain" class="read-more">Learn blockchain principles, smart contracts, and decentralized applications (DApps).</p></li>
-    <li><span>IoT Applications</span><button onclick="toggleReadMore('iot-app', this)">Read More</button><p id="iot-app" class="read-more">Build IoT devices, sensors, and integrate cloud analytics for automation.</p></li>
-    <li><span>AR/VR Development</span><button onclick="toggleReadMore('arvr', this)">Read More</button><p id="arvr" class="read-more">Augmented and Virtual Reality applications for web, mobile, and games.</p></li>
-    <li><span>Edge Computing</span><button onclick="toggleReadMore('edge', this)">Read More</button><p id="edge" class="read-more">Deploy computation near data sources for latency-sensitive applications.</p></li>
-    <li><span>Quantum Computing Basics</span><button onclick="toggleReadMore('quantum', this)">Read More</button><p id="quantum" class="read-more">Introduction to qubits, quantum algorithms, and future computing paradigms.</p></li>
-    <li><span>Robotics & Automation</span><button onclick="toggleReadMore('robotics', this)">Read More</button><p id="robotics" class="read-more">Automate tasks using robotics, sensors, and microcontrollers.</p></li>
-    <li><span>AR Cloud Integration</span><button onclick="toggleReadMore('ar-cloud', this)">Read More</button><p id="ar-cloud" class="read-more">Combine AR apps with cloud data for interactive real-world experiences.</p></li>
-    <li><span>Voice & Speech Recognition</span><button onclick="toggleReadMore('voice', this)">Read More</button><p id="voice" class="read-more">Build applications that process voice commands and speech analytics.</p></li>
-    <li><span>5G & Network Innovations</span><button onclick="toggleReadMore('5g', this)">Read More</button><p id="5g" class="read-more">Explore high-speed network technologies and their impact on IoT and mobile apps.</p></li>
-    <li><span>Emerging AI Tools</span><button onclick="toggleReadMore('ai-tools', this)">Read More</button><p id="ai-tools" class="read-more">Experiment with the latest AI frameworks, APIs, and no-code AI solutions.</p></li>
-  </ul>
-</div>
-
-<!-- Faculty 10: IT Business & Management -->
-<div class="faculty">
-  <h3>10. IT Business & Management</h3>
-  <ul>
-    <li><span>Agile & Scrum Methodologies</span><button onclick="toggleReadMore('agile', this)">Read More</button><p id="agile" class="read-more">Implement Agile frameworks and Scrum practices for efficient project management.</p></li>
-    <li><span>Project Management (PMP)</span><button onclick="toggleReadMore('pmp', this)">Read More</button><p id="pmp" class="read-more">Plan, execute, and manage IT projects using PMI best practices.</p></li>
-    <li><span>IT Service Management (ITIL)</span><button onclick="toggleReadMore('itil', this)">Read More</button><p id="itil" class="read-more">Standard practices for managing IT services and improving customer satisfaction.</p></li>
-    <li><span>Business Analytics</span><button onclick="toggleReadMore('business-analytics', this)">Read More</button><p id="business-analytics" class="read-more">Analyze data to drive business decisions and improve operational efficiency.</p></li>
-    <li><span>Digital Transformation Strategies</span><button onclick="toggleReadMore('digital-trans', this)">Read More</button><p id="digital-trans" class="read-more">Guide organizations in adopting technology for digital innovation and competitiveness.</p></li>
-    <li><span>Tech Entrepreneurship</span><button onclick="toggleReadMore('entrepreneurship', this)">Read More</button><p id="entrepreneurship" class="read-more">Start and manage technology-driven businesses successfully.</p></li>
-    <li><span>IT Governance & Compliance</span><button onclick="toggleReadMore('it-governance', this)">Read More</button><p id="it-governance" class="read-more">Ensure IT systems comply with policies, regulations, and corporate governance standards.</p></li>
-    <li><span>Cloud ROI & Cost Management</span><button onclick="toggleReadMore('cloud-roi', this)">Read More</button><p id="cloud-roi" class="read-more">Manage cloud costs effectively and calculate return on investment for cloud projects.</p></li>
-    <li><span>Team Leadership & Communication</span><button onclick="toggleReadMore('leadership', this)">Read More</button><p id="leadership" class="read-more">Develop soft skills for leading tech teams and communicating project goals.</p></li>
-    <li><span>Innovation Management</span><button onclick="toggleReadMore('innovation', this)">Read More</button><p id="innovation" class="read-more">Implement frameworks for fostering creativity and technological innovation.</p></li>
-  </ul>
-</div>
-
-
-
-<div class="floating-social">
-  <a href="https://www.youtube.com/c/cypressworld5" target="_blank">YouTube</a>
-  <a href="https://www.facebook.com/cypressworld5" target="_blank">Facebook</a>
-  <a href="https://www.tiktok.com/@cypressworld5" target="_blank">TikTok</a>
-  <a href="https://twitter.com/cypressworld5" target="_blank">X</a>
-</div>
-
-
-  <a href="https://wa.me/2347039153600" class="whatsapp-float" target="_blank">
-  💬 Chat Me
-</a>
-<button id="open-chat" onclick="toggleChat()">🤖 AI Chat</button>
-
-  <div id="chat-box">
-  <div id="chat-header">AI Assistant</div>
+<div id="chat-box">
+  <div id="chat-header">CypressWorld AI Assistant</div>
   <div id="chat-messages"></div>
-  <input type="text" id="chat-input" placeholder="Ask me anything..." />
-  <button onclick="sendChat()">Send</button>
+  <div class="chat-input-area">
+    <input type="text" id="chat-input" placeholder="How can I help you today?" />
+    <button onclick="sendChat()">Send</button>
   </div>
+</div>
 
-  
-
-<!-- Footer / Contact -->
-<footer>
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:cypressworld5@gmail.com">cypressworld5@gmail.com</a></p>
-  <p>WhatsApp: <a href="https://wa.me/2347039153600" target="_blank">07039153600</a></p>
-  <p>Socials: 
-    <a href="https://www.youtube.com/c/cypressworld5" target="_blank">YouTube</a>, 
-    <a href="https://www.facebook.com/cypressworld5" target="_blank">Facebook</a>, 
-    <a href="https://www.tiktok.com/@cypressworld5" target="_blank">TikTok</a>, 
-    <a href="https://twitter.com/cypressworld5" target="_blank">X</a>
-  </p>
+<footer id="contact">
+  <div class="footer-content">
+    <h2>Contact Me</h2>
+    <div class="contact-grid">
+      <div class="contact-item">Email: <a href="mailto:cypressworld5@gmail.com">cypressworld5@gmail.com</a></div>
+      <div class="contact-item">WhatsApp: <a href="https://wa.me/2347039153600">07039153600</a></div>
+    </div>
+    <div class="social-links">
+      <a href="https://youtube.com/c/cypressworld5">YouTube</a>
+      <a href="https://facebook.com/cypressworld5">Facebook</a>
+      <a href="https://tiktok.com/@cypressworld5">TikTok</a>
+      <a href="https://twitter.com/cypressworld5">X</a>
+    </div>
+    <p class="copyright">&copy; 2026 CypressWorld. Built by Wisdom Amaju.</p>
+  </div>
 </footer>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
