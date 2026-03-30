@@ -18,7 +18,7 @@ body {
   background: var(--bg-dark); 
   color: #ffffff; 
   font-family: var(--font-main); 
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Stops horizontal shaking */
   padding-top: 70px; 
   font-size: 16px; 
   line-height: 1.6; 
@@ -80,24 +80,19 @@ body {
   text-align: center;
 }
 
-/* --- 4. ABOUT SECTION (CENTERED FIX) --- */
+/* --- 4. ABOUT ME (CENTERED) --- */
 .about-container { 
   padding: 60px 20px; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the card horizontally */
-  text-align: center;   /* Centers the text inside */
+  align-items: center; /* Horizontally centers the card */
+  text-align: center;   /* Centers text inside the card */
 }
 
 .section-header { 
   text-align: center; 
   margin-bottom: 30px; 
   width: 100%;
-}
-
-.section-header h2 {
-  font-size: 1.8rem;
-  color: #fff;
 }
 
 .accent-line { 
@@ -113,7 +108,7 @@ body {
   padding: 30px 25px;
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  max-width: 700px; /* Prevents text from stretching too wide on desktop */
+  max-width: 700px;
   width: 100%;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
@@ -124,7 +119,7 @@ body {
   line-height: 1.8;
 }
 
-/* --- 5. THE CATALOG SECTION --- */
+/* --- 5. CATALOG SECTION (CENTERED) --- */
 .courses-container { 
   padding: 40px 15px; 
   text-align: center;
@@ -149,7 +144,7 @@ body {
   color: var(--primary);
   font-size: 1.2rem;
   margin-bottom: 25px;
-  text-align: center; /* Centered track titles */
+  text-align: center;
 }
 
 .faculty ul { list-style: none; }
@@ -163,7 +158,7 @@ body {
 .list-header { 
   display: flex; 
   flex-direction: column; 
-  align-items: center; /* Centers text and button vertically */
+  align-items: center; /* Centers items vertically */
   width: 100%; 
   gap: 12px;
 }
@@ -206,7 +201,7 @@ body {
   padding-top: 15px;
 }
 
-/* --- 7. FLOATING ACTIONS & CHAT --- */
+/* --- 7. FLOATING ACTIONS --- */
 .floating-actions {
   position: fixed;
   bottom: 25px;
@@ -228,7 +223,6 @@ body {
   display: flex; 
   align-items: center; 
   gap: 8px; 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .ai-float { 
@@ -239,22 +233,6 @@ body {
   font-weight: bold; 
   cursor: pointer; 
   font-size: 14px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-#chat-box {
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  width: 90%;
-  max-width: 350px;
-  height: 450px;
-  background: #111;
-  border: 2px solid var(--primary);
-  border-radius: 15px;
-  display: none;
-  flex-direction: column;
-  z-index: 10001;
 }
 
 /* --- 8. FOOTER --- */
@@ -265,8 +243,6 @@ footer {
   border-top: 1px solid rgba(255, 127, 0, 0.2);
 }
 
-.contact-links, .social-links { margin-bottom: 15px; }
-
 .contact-links a, .social-links a {
   color: var(--primary);
   text-decoration: none;
@@ -274,10 +250,7 @@ footer {
   font-size: 0.9rem;
 }
 
-.copyright { margin-top: 25px; font-size: 0.8rem; color: #666; }
-
 /* DESKTOP ADJUSTMENT */
 @media (min-width: 768px) {
   .faculty-grid { grid-template-columns: repeat(2, 1fr); }
-  .typing-text { font-size: 3.5rem; }
 }
