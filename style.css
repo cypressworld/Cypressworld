@@ -1,20 +1,34 @@
 /* General Styles */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f0f2f5;
+  background: linear-gradient(135deg, #fff6f0, #ffd699);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  color: #000;
 }
 
 header {
   text-align: center;
   padding: 50px 20px;
+  background-color: #ff8c42;
+  color: white;
 }
 
+header h1 {
+  font-size: 2.5em;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1.1em;
+}
+
+/* Avatar */
 .avatar {
   width: 120px;
   border-radius: 50%;
+  border: 3px solid white;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -23,9 +37,33 @@ header {
   50% { transform: translateY(-10px); }
 }
 
-h1 { font-size: 2.2em; margin: 10px 0; }
-h2 { text-align: center; margin: 40px 0 20px; }
-ul { list-style: none; padding: 0; text-align: center; }
+/* Sections */
+section {
+  padding: 40px 20px;
+  background: white;
+  margin: 20px auto;
+  border-radius: 15px;
+  max-width: 900px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #ff8c42;
+  margin-bottom: 20px;
+}
+
+.course {
+  margin-bottom: 20px;
+}
+
+.course h3 {
+  color: #000;
+}
+
+.course p {
+  font-size: 14px;
+}
 
 /* Animated Characters */
 .character-left, .character-right {
@@ -57,6 +95,7 @@ ul { list-style: none; padding: 0; text-align: center; }
   transition: transform 0.2s;
   z-index: 1000;
 }
+
 .whatsapp-button:hover {
   transform: scale(1.1);
 }
@@ -68,7 +107,7 @@ ul { list-style: none; padding: 0; text-align: center; }
   right: 20px;
   width: 300px;
   max-height: 400px;
-  background: white;
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   display: flex;
@@ -94,7 +133,7 @@ ul { list-style: none; padding: 0; text-align: center; }
 #chat-send {
   width: 30%;
   border: none;
-  background: #007bff;
+  background: #ff8c42;
   color: white;
   cursor: pointer;
 }
