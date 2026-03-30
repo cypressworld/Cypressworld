@@ -126,7 +126,7 @@ body {
 /* --- 5. CATALOG SECTION (CENTERED) --- */
 .courses-container { 
   padding: 40px 15px; 
-  text-align: center;
+ /* text-align: center;*/
 }
 
 .faculty-grid {
