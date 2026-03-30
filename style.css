@@ -1,3 +1,54 @@
+/* Fix for the giant image */
+.avatar {
+  width: 150px; /* Force a professional size */
+  height: 150px;
+  object-fit: cover; /* Prevents stretching */
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  margin-bottom: 15px;
+}
+
+/* Fix for the Header Layout */
+.main-header {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
+}
+
+.header-content {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column; /* Stacks image on top of text */
+  align-items: center;
+  text-align: center;
+}
+
+/* FIX: This stops the buttons from floating to the right */
+.list-header {
+  display: flex;
+  justify-content: space-between; /* Course name left, Button right */
+  align-items: center;
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.list-header span {
+  font-size: 0.95rem;
+  max-width: 70%; /* Keeps text from hitting the button */
+  text-align: left;
+}
+
+/* Reset for the "Read More" button appearance */
+.list-header button {
+  min-width: 80px;
+  font-size: 10px;
+  padding: 5px 10px;
+}
+
 :root {
   --primary: #ff7f00;
   --secondary: #28a745;
