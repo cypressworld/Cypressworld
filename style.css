@@ -1,9 +1,11 @@
-/* --- VARIABLES & RESET --- */
+/* --- 1. THE FOUNDATION & BRANDING --- */
 :root {
   --primary: #ff7f00;
   --secondary: #28a745;
   --bg-dark: #050505;
+  --card-bg: #111111;
   --font-main: 'Poppins', sans-serif;
+  --text-dim: #bbbbbb;
 }
 
 * { 
@@ -14,38 +16,38 @@
 
 body { 
   background: var(--bg-dark); 
-  color: #fff; 
+  color: #ffffff; 
   font-family: var(--font-main); 
-  overflow-x: auto; 
-  padding-top: 80px; 
-  font-size: 18px; 
+  overflow-x: hidden; 
+  padding-top: 70px; 
+  font-size: 16px; 
   line-height: 1.6; 
   -webkit-font-smoothing: antialiased; 
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  width: 100%;
-  position: relative;
 }
 
-/* --- NAVBAR --- */
+/* --- 2. NAVIGATION --- */
 .navbar { 
   position: fixed; 
   top: 0; 
   width: 100%; 
-  background: rgba(0,0,0,0.9); 
+  background: rgba(0,0,0,0.95); 
   padding: 15px 5%; 
   display: flex; 
   justify-content: space-between; 
+  align-items: center;
   z-index: 1000; 
   border-bottom: 1px solid var(--primary); 
 }
-.nav-logo span { color: var(--primary); }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { color: white; text-decoration: none; font-weight: 600; }
 
-/* --- HEADER & PROFILE --- */
+.nav-logo { font-weight: 700; font-size: 1.2rem; }
+.nav-logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; gap: 15px; }
+.nav-links a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+
+/* --- 3. HEADER & PROFILE --- */
 .main-header {
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +57,7 @@ body {
 }
 
 .header-content {
-  max-width: 800px;
+  max-width: 600px;
   display: flex;
   flex-direction: column; 
   align-items: center;
@@ -67,159 +69,158 @@ body {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--primary);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255, 127, 0, 0.3);
 }
 
 .typing-text {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--primary);
-  border-right: 3px solid var(--primary);
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  margin: 10px auto;
-  animation: typing 3s steps(20, end) forwards, blink 0.8s infinite;
+  margin-bottom: 10px;
 }
 
-@keyframes typing { from { width: 0; } to { width: 100%; } }
-@keyframes blink { 50% { border-color: transparent; } }
+/* --- 4. ABOUT SECTION --- */
+.about-container { padding: 40px 20px; }
+.section-header { text-align: center; margin-bottom: 30px; }
+.accent-line { width: 50px; height: 3px; background: var(--primary); margin: 10px auto; }
 
-/* --- COURSE LISTS (CENTERED FIX) --- */
+.about-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- 5. THE "WISDOM AMAJU" CATALOG (MOBILE FIXED) --- */
+.courses-container { padding: 40px 15px; }
+
 .faculty-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 25px;
 }
 
 .faculty {
-  background: #111;
-  padding: 25px 15px;
+  background: var(--card-bg);
+  padding: 20px;
   border-radius: 15px;
-  border: 1px solid rgba(255, 127, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: 1px solid rgba(255, 127, 0, 0.2);
 }
 
-.faculty ul {
-  width: 100%;
-  list-style: none;
+.faculty h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary);
+  padding-left: 10px;
 }
+
+.faculty ul { list-style: none; }
 
 .faculty ul li {
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 15px;
 }
 
-/* FIX: Removes massive gap and centers button under text */
+/* THE FIX: Vertical stacking prevents text hiding */
 .list-header { 
   display: flex; 
   flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
+  align-items: flex-start; 
   width: 100%; 
   gap: 10px;
-  text-align: center;
 }
 
 .list-header span {
   font-size: 1.05rem;
   font-weight: 600;
-  max-width: 100%;
-  color: #fff;
+  color: #ffffff;
+  line-height: 1.3;
+  text-align: left;
 }
 
 .list-header button {
-  min-width: 100px;
-  font-size: 11px;
-  padding: 6px 15px;
   background: var(--primary);
+  color: #000;
   border: none;
   border-radius: 4px;
-  color: #000;
-  font-weight: bold;
+  padding: 6px 14px;
+  font-size: 10px;
+  font-weight: 800;
   text-transform: uppercase;
   cursor: pointer;
+  letter-spacing: 1px;
 }
 
-/* --- READ MORE CONTENT --- */
+/* --- 6. READ MORE TRANSITIONS --- */
 .read-more {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all 0.4s ease;
-  font-size: 0.95rem;
-  color: #d1d1d1;
-  text-align: center;
+  transition: all 0.3s ease-out;
+  font-size: 0.9rem;
+  color: var(--text-dim);
 }
 
 .read-more.show {
-  max-height: 500px;
+  max-height: 300px;
   opacity: 1;
-  padding: 10px 0;
+  padding-top: 12px;
 }
 
-/* --- FLOATING ACTIONS & CHAT --- */
+/* --- 7. FLOATING ACTIONS & CHAT --- */
 .floating-actions {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   z-index: 10000;
 }
 
 .whatsapp-float { 
   background: #25D366; 
   color: white; 
-  padding: 10px 20px; 
+  padding: 12px 20px; 
   border-radius: 50px; 
   text-decoration: none; 
   font-weight: bold; 
+  font-size: 14px;
   display: flex; 
   align-items: center; 
   gap: 8px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .ai-float { 
   background: var(--primary); 
-  padding: 10px 20px; 
+  padding: 12px 20px; 
   border-radius: 50px; 
   border: none; 
   font-weight: bold; 
   cursor: pointer; 
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 #chat-box {
   position: fixed;
   bottom: 100px;
   right: 20px;
-  width: 320px;
-  height: 400px;
+  width: 90%;
+  max-width: 350px;
+  height: 450px;
   background: #111;
   border: 2px solid var(--primary);
   border-radius: 15px;
   display: none;
   flex-direction: column;
   z-index: 10001;
-  box-shadow: 0 10px 30px rgba(0,0,0,1);
 }
 
-.chat-header { 
-  background: var(--primary); 
-  padding: 10px; 
-  color: black; 
-  display: flex; 
-  justify-content: space-between; 
-  font-weight: bold; 
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-/* --- FOOTER --- */
+/* --- 8. FOOTER --- */
 footer {
   padding: 40px 20px;
   background: #000;
@@ -227,16 +228,19 @@ footer {
   border-top: 1px solid rgba(255, 127, 0, 0.2);
 }
 
-.contact-links, .social-links {
-  margin: 15px 0;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.social-links a, .contact-links a {
+.contact-links a, .social-links a {
   color: var(--primary);
   text-decoration: none;
-  font-size: 0.9rem;
+  margin: 0 10px;
+  font-size: 0.85rem;
+}
+
+.copyright { margin-top: 20px; font-size: 0.75rem; color: #555; }
+
+/* DESKTOP ADJUSTMENT */
+@media (min-width: 768px) {
+  .faculty-grid { grid-template-columns: repeat(2, 1fr); }
+  .typing-text { font-size: 3.5rem; }
+  .list-header { flex-direction: row; justify-content: space-between; align-items: center; }
+  .list-header span { max-width: 70%; }
 }
