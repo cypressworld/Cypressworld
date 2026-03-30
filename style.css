@@ -80,6 +80,13 @@ button:hover {
   background: #ffa64d;
 }
 
+.read-more {
+  display: none; /* Important: hide initially */
+  color: #fff;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
 /* READ MORE */
 .read-more {
   max-height: 0;
