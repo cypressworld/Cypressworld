@@ -59,17 +59,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return "I can guide you. Ask about courses or services.";
   }
-
-function toggleReadMore(id, btn) {
-  const el = document.getElementById(id);
-
-  if (el.style.display === "block") {
-    el.style.display = "none";
-    btn.innerText = "Read More";
-  } else {
-    el.style.display = "block";
-    btn.innerText = "Read Less";
-  }
-}
   
 });
