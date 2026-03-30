@@ -5,87 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CypressWorld - Wisdom Amaju</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <!-- Header with Particles -->
-  <header class="header">
-    <canvas id="particles"></canvas>
-    <div class="header-content fade-in">
-      <img src="assets/avatar.png" alt="Wisdom Amaju" class="avatar floating-avatar">
-      <h1>Wisdom Amaju</h1>
-      <p>Full-Stack Developer & DevOps Engineer | CypressWorld</p>
-      <div class="socials">
-        <a href="https://www.youtube.com/c/cypressworld5" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://facebook.com/cypressworld5" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://tiktok.com/@cypressworld5" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://x.com/cypressworld5" target="_blank"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-    <img src="assets/character1.gif" alt="Animated Character" class="character-left">
-    <img src="assets/character2.gif" alt="Animated Character" class="character-right">
+  <!-- Header -->
+  <header>
+    <img src="assets/avatar.png" alt="Wisdom Amaju" class="avatar">
+    <h1>Wisdom Amaju - CypressWorld</h1>
+    <p>Full-Stack Developer | DevOps Engineer | Tech Instructor at NIIT</p>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="section fade-in parallax">
+  <!-- About Me Section -->
+  <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m Wisdom Amaju, a Full-Stack Developer and DevOps Engineer. I specialize in scalable apps, cloud deployment, AI integration, and teaching modern tech. I run CypressWorld, creating tutorials and services for aspiring developers.</p>
+    <p>
+      I am Wisdom Amaju, a passionate **Full-Stack Developer, DevOps Engineer, and Instructor**. 
+      With expertise in **Java, Python, Flask, Django, React, Node.js**, and cloud technologies like **AWS, GCP, and Azure**, 
+      I help individuals and businesses build robust applications and scalable infrastructure.  
+      I have been teaching at **Global Institution**, mentoring students and guiding them in achieving their career goals in technology.
+      <span id="more-about" style="display:none;">
+        I also specialize in **AI and chatbot integration**, cybersecurity basics, database design, and modern frontend frameworks. 
+        My mission is to combine **practical development skills with industry-ready DevOps practices** to empower learners and clients.
+      </span>
+    </p>
+    <button onclick="toggleReadMore('more-about', this)">Read More</button>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section fade-in parallax">
-    <h2>My Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Full-Stack Development</h3>
-        <p>Java, Python, Flask, Django, React.js, Next.js</p>
-      </div>
-      <div class="skill-card">
-        <h3>DevOps & Cloud</h3>
-        <p>Docker, Kubernetes, AWS, GCP, Terraform, CI/CD</p>
-      </div>
-      <div class="skill-card">
-        <h3>Frontend & UI</h3>
-        <p>HTML, CSS, Tailwind, Bootstrap, JavaScript, Vue, Angular</p>
-      </div>
-      <div class="skill-card">
-        <h3>Databases</h3>
-        <p>MySQL, PostgreSQL, MongoDB, Redis, Oracle</p>
-      </div>
-      <div class="skill-card">
-        <h3>AI & Data Science</h3>
-        <p>ML, NLP, Computer Vision, Python Libraries, AI Prompt Engineering</p>
-      </div>
-      <div class="skill-card">
-        <h3>Teaching & Mentorship</h3>
-        <p>Workshops, Tutorials, Dev Courses</p>
-      </div>
+  <!-- Skills & Courses Section -->
+  <section id="skills">
+    <h2>My Courses & Skills</h2>
+
+    <div class="course">
+      <h3>Java SE (Standard Edition)</h3>
+      <p>
+        Core programming fundamentals and object-oriented concepts.
+        <span id="more-java" style="display:none;">
+          This course covers **variables, loops, classes, inheritance, interfaces, exceptions**, and more.
+          By the end, you'll be able to build complete Java applications and understand best practices.
+        </span>
+      </p>
+      <button onclick="toggleReadMore('more-java', this)">Read More</button>
     </div>
+
+    <div class="course">
+      <h3>Python for Beginners</h3>
+      <p>
+        Introduction to Python programming.
+        <span id="more-python" style="display:none;">
+          Learn **data types, loops, functions, modules, and file handling**. 
+          Gain a solid foundation for web development with Flask, data analysis, and scripting automation.
+        </span>
+      </p>
+      <button onclick="toggleReadMore('more-python', this)">Read More</button>
+    </div>
+
+    <div class="course">
+      <h3>DevOps: Docker & Kubernetes</h3>
+      <p>
+        Modern DevOps practices for containerized applications.
+        <span id="more-devops" style="display:none;">
+          Understand **containerization, orchestration, CI/CD pipelines, Terraform, Ansible, monitoring with Prometheus/Grafana**, 
+          and deployment strategies to production-ready applications.
+        </span>
+      </p>
+      <button onclick="toggleReadMore('more-devops', this)">Read More</button>
+    </div>
+
+    <!-- Add more courses here following the same pattern -->
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section fade-in parallax">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:cypressworld5@gmail.com">cypressworld5@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/2347039153600?text=Hello%20Wisdom">07039153600</a></p>
-  </section>
+  <!-- Animated Characters -->
+  <img src="assets/character1.gif" class="character-left" alt="Animated Character">
+  <img src="assets/character2.gif" class="character-right" alt="Animated Character">
 
   <!-- AI Chat Widget -->
-  <section id="ai-chat" class="section fade-in parallax">
-    <h2>AI Chat Engine</h2>
-    <div class="ai-chat-box">
-      <div id="chat-content"></div>
-      <input type="text" id="chat-input" placeholder="Type your message..." />
-      <button id="chat-send">Send</button>
-    </div>
-  </section>
+  <div id="chat-widget">
+    <div id="chat-content"></div>
+    <input type="text" id="chat-input" placeholder="Type your message..."/>
+    <button id="chat-send">Send</button>
+  </div>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/2347039153600?text=Hello%20Wisdom,%20I%20want%20to%20work%20with%20you" class="whatsapp-button">
-    <i class="fab fa-whatsapp"></i>
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/2347039153600" target="_blank" class="whatsapp-button">
+    Chat with me
   </a>
 
   <script src="script.js"></script>
+  <script>
+    // Toggle Read More / Read Less
+    function toggleReadMore(id, btn) {
+      const span = document.getElementById(id);
+      if (span.style.display === "none") {
+        span.style.display = "inline";
+        btn.textContent = "Read Less";
+      } else {
+        span.style.display = "none";
+        btn.textContent = "Read More";
+      }
+    }
+  </script>
 </body>
 </html>
