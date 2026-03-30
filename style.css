@@ -99,6 +99,13 @@ button:hover {
   max-height: 200px;
 }
 
+.read-more {
+  display: none; /* Important: hide initially */
+  color: #fff;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
 /* FLOATING SOCIAL */
 .floating-social {
   position: fixed;
@@ -145,12 +152,6 @@ button:hover {
   z-index: 999;
 }
 
-#chat-header {
-  background: #ff7f00;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-}
 
 #chat-messages {
   height: 200px;
