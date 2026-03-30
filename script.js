@@ -39,6 +39,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   };
 
+
+
+typing-effect {
+  font-family: monospace;
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+
+
+
+
+  
   function addMsg(text, type) {
     const container = document.getElementById("chat-messages");
     const div = document.createElement("div");
