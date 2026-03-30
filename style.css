@@ -56,9 +56,51 @@
   --font-main: 'Poppins', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg-dark); color: #fff; font-family: var(--font-main); overflow-x: hidden; padding-top: 70px; }
+/* 1. The Global Reset */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
 
+/* 2. The Body - Optimized for Readability */
+body { 
+  background: var(--bg-dark); 
+  color: #fff; 
+  font-family: var(--font-main); 
+  
+  /* FIX: Show hidden items at the edge by allowing horizontal scroll if needed */
+  overflow-x: auto; 
+  
+  /* FIX: Adjust spacing for the top navbar */
+  padding-top: 80px; 
+
+  /* FIX: Sharper, larger, more readable text */
+  font-size: 18px; 
+  line-height: 1.6; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  
+  /* Prevent accidental horizontal "shaking" on mobile while showing content */
+  width: 100%;
+  position: relative;
+}
+
+/* 3. Enhancing the Course List Typography */
+.faculty ul li {
+  font-size: 1.05rem; /* Makes the course names stand out */
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 8px;
+}
+
+/* 4. Improved Contrast for the "Read More" text */
+.read-more {
+  font-size: 0.95rem;
+  color: #d1d1d1; /* Brighter gray for better visibility on black background */
+  padding-top: 5px;
+}
 /* NAVBAR */
 .navbar { position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.9); padding: 15px 5%; display: flex; justify-content: space-between; z-index: 1000; border-bottom: 1px solid var(--primary); }
 .nav-logo span { color: var(--primary); }
