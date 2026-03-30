@@ -88,6 +88,13 @@ button:hover {
   font-size: 0.9rem;
 }
 
+.read-more {
+  display: none;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
 .read-more.show {
   max-height: 200px;
 }
