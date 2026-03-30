@@ -110,23 +110,19 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   max-width: 700px;
   width: 100%;
-  align-items: center;
-  text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .about-card p {
   color: var(--text-dim);
   font-size: 1.05rem;
-  align-text:center;
-  text-align:center;
   line-height: 1.8;
 }
 
 /* --- 5. CATALOG SECTION (CENTERED) --- */
 .courses-container { 
   padding: 40px 15px; 
- /* text-align: center;*/
+  text-align: center;
 }
 
 .faculty-grid {
