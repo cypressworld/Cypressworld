@@ -27,15 +27,6 @@ header {
   animation: float 4s ease-in-out infinite;
 }
 
-#about p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #fff;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 h1 {
   color: #ff7f00;
 }
@@ -97,22 +88,8 @@ button:hover {
   font-size: 0.9rem;
 }
 
-.read-more {
-  display: none;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: #fff;
-}
-
 .read-more.show {
   max-height: 200px;
-}
-
-.read-more {
-  display: none; /* Important: hide initially */
-  color: #fff;
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
 }
 
 /* FLOATING SOCIAL */
@@ -161,6 +138,12 @@ button:hover {
   z-index: 999;
 }
 
+#chat-header {
+  background: #ff7f00;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
 
 #chat-messages {
   height: 200px;
