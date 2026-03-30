@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CypressWorld - Wisdom Amaju</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <!-- Header -->
@@ -14,23 +14,22 @@
     <p>Full-Stack Developer | DevOps Engineer | Tech Instructor at NIIT</p>
   </header>
 
-  <!-- About Me Section -->
+  <!-- About Me -->
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am Wisdom Amaju, a passionate **Full-Stack Developer, DevOps Engineer, and Instructor**. 
-      With expertise in **Java, Python, Flask, Django, React, Node.js**, and cloud technologies like **AWS, GCP, and Azure**, 
-      I help individuals and businesses build robust applications and scalable infrastructure.  
-      I have been teaching at **Global Institution**, mentoring students and guiding them in achieving their career goals in technology.
+      I am Wisdom Amaju, a passionate <strong>Full-Stack Developer, DevOps Engineer, and Instructor</strong>. 
+      With expertise in Java, Python, Flask, Django, React, Node.js, and cloud technologies like AWS, GCP, and Azure, 
+      I help individuals and businesses build robust applications and scalable infrastructure.
       <span id="more-about" style="display:none;">
-        I also specialize in **AI and chatbot integration**, cybersecurity basics, database design, and modern frontend frameworks. 
-        My mission is to combine **practical development skills with industry-ready DevOps practices** to empower learners and clients.
+        I also specialize in AI and chatbot integration, cybersecurity, database design, and modern frontend frameworks. 
+        My mission is to combine practical development skills with industry-ready DevOps practices to empower learners and clients.
       </span>
     </p>
     <button onclick="toggleReadMore('more-about', this)">Read More</button>
   </section>
 
-  <!-- Skills & Courses Section -->
+  <!-- Skills / Courses -->
   <section id="skills">
     <h2>My Courses & Skills</h2>
 
@@ -39,8 +38,7 @@
       <p>
         Core programming fundamentals and object-oriented concepts.
         <span id="more-java" style="display:none;">
-          This course covers **variables, loops, classes, inheritance, interfaces, exceptions**, and more.
-          By the end, you'll be able to build complete Java applications and understand best practices.
+          Covers variables, loops, classes, inheritance, interfaces, exceptions, and best practices.
         </span>
       </p>
       <button onclick="toggleReadMore('more-java', this)">Read More</button>
@@ -51,8 +49,7 @@
       <p>
         Introduction to Python programming.
         <span id="more-python" style="display:none;">
-          Learn **data types, loops, functions, modules, and file handling**. 
-          Gain a solid foundation for web development with Flask, data analysis, and scripting automation.
+          Learn data types, loops, functions, modules, and file handling. Foundation for web development, data analysis, and automation.
         </span>
       </p>
       <button onclick="toggleReadMore('more-python', this)">Read More</button>
@@ -63,14 +60,12 @@
       <p>
         Modern DevOps practices for containerized applications.
         <span id="more-devops" style="display:none;">
-          Understand **containerization, orchestration, CI/CD pipelines, Terraform, Ansible, monitoring with Prometheus/Grafana**, 
-          and deployment strategies to production-ready applications.
+          Understand containerization, orchestration, CI/CD pipelines, Terraform, Ansible, monitoring, and deployment strategies.
         </span>
       </p>
       <button onclick="toggleReadMore('more-devops', this)">Read More</button>
     </div>
 
-    <!-- Add more courses here following the same pattern -->
   </section>
 
   <!-- Animated Characters -->
@@ -94,7 +89,7 @@
     // Toggle Read More / Read Less
     function toggleReadMore(id, btn) {
       const span = document.getElementById(id);
-      if (span.style.display === "none") {
+      if(span.style.display === "none") {
         span.style.display = "inline";
         btn.textContent = "Read Less";
       } else {
