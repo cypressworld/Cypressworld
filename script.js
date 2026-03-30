@@ -59,5 +59,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return "I can guide you. Ask about courses or services.";
   }
-  
+
 });
