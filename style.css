@@ -108,14 +108,18 @@ body {
   padding: 30px 25px;
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  max-width: 700px;
-  width: 100%;
+  max-width: 400px;
+  width: 50%;
+  align-items: center;
+  text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .about-card p {
   color: var(--text-dim);
   font-size: 1.05rem;
+  align-text:center;
+  text-align:center;
   line-height: 1.8;
 }
 
