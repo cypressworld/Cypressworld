@@ -60,17 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return "I can guide you. Ask about courses or services.";
   }
 
-  function toggleReadMore(id, btn) {
-  const moreText = document.getElementById(id);
-  if (!moreText) return;
+function toggleReadMore(id, btn) {
+  const el = document.getElementById(id);
 
-  if (moreText.style.display === "none" || moreText.style.display === "") {
-    moreText.style.display = "inline";
-    btn.textContent = "Read Less";
+  if (el.style.display === "block") {
+    el.style.display = "none";
+    btn.innerText = "Read More";
   } else {
-    moreText.style.display = "none";
-    btn.textContent = "Read More";
+    el.style.display = "block";
+    btn.innerText = "Read Less";
   }
 }
-
+  
 });
