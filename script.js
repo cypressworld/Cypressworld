@@ -60,4 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return "I can guide you. Ask about courses or services.";
   }
 
+  function toggleReadMore(id, btn) {
+  const moreText = document.getElementById(id);
+  if (!moreText) return;
+
+  if (moreText.style.display === "none" || moreText.style.display === "") {
+    moreText.style.display = "inline";
+    btn.textContent = "Read Less";
+  } else {
+    moreText.style.display = "none";
+    btn.textContent = "Read More";
+  }
+  }
+
 });
