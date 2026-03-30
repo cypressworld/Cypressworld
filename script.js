@@ -1,105 +1,131 @@
+/**
+ * CypressWorld Portfolio Engine
+ * Version: 6.0.0
+ * Author: Wisdom Amaju
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
-  
-  // --- 1. THE ADVANCED TOGGLE ENGINE ---
-  window.toggleReadMore = function(id, btn) {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    const isShowing = el.classList.toggle("show");
-    btn.innerText = isShowing ? "Show Less" : "Read More";
     
-    // Add a little "Success" color flash when opening
-    if(isShowing) {
-        btn.style.background = "#28a745";
-        setTimeout(() => btn.style.background = "", 500);
+    // --- 1. ADVANCED READ MORE ENGINE ---
+    // Handles the smooth sliding expansion of faculty details
+    window.toggleReadMore = function(id, btn) {
+        const element = document.getElementById(id);
+        if (!element) return;
+
+        // Toggle the 'show' class for CSS transitions
+        const isExpanded = element.classList.toggle("show");
+
+        // Update Button UI with feedback
+        btn.innerText = isExpanded ? "Read Less" : "Read More";
+        
+        // Optional: Change button color when active to Green
+        if (isExpanded) {
+            btn.style.background = "#28a745"; // Success Green
+            btn.style.color = "#fff";
+        } else {
+            btn.style.background = "#ff7f00"; // Back to Brand Orange
+            btn.style.color = "#000";
+        }
+    };
+
+    // --- 2. AI CHATBOT UI LOGIC ---
+    const chatBox = document.getElementById("chat-box");
+    const chatInput = document.getElementById("chat-input");
+    const chatMessages = document.getElementById("chat-messages");
+
+    window.toggleChat = function() {
+        // Check current display state
+        const isHidden = chatBox.style.display === "none" || chatBox.style.display === "";
+        
+        if (isHidden) {
+            chatBox.style.display = "flex";
+            chatInput.focus(); // Focus input for better UX
+            
+            // Send a welcome message if the chat is empty
+            if (chatMessages.children.length === 0) {
+                setTimeout(() => {
+                    addMessage("Welcome to CypressWorld! I'm your AI assistant. Ask me about our <b>Courses</b> or <b>Pricing</b>.", "bot");
+                }, 400);
+            }
+        } else {
+            chatBox.style.display = "none";
+        }
+    };
+
+    // --- 3. THE AI "BRAIN" (Keyword Engine) ---
+    window.sendChat = function() {
+        const userText = chatInput.value.trim();
+        if (!userText) return;
+
+        // Display user message
+        addMessage(userText, "user");
+        chatInput.value = "";
+
+        // Artificial delay to simulate "thinking"
+        setTimeout(() => {
+            const botResponse = getSmartResponse(userText.toLowerCase());
+            addMessage(botResponse, "bot");
+        }, 700);
+    };
+
+    // Listen for 'Enter' key in the chat input
+    chatInput?.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") window.sendChat();
+    });
+
+    function addMessage(text, sender) {
+        const msgDiv = document.createElement("div");
+        msgDiv.className = `msg ${sender}`;
+        
+        // Using innerHTML to allow <b> tags in bot responses
+        msgDiv.innerHTML = `<strong>${sender === 'user' ? 'You' : 'Cypress AI'}:</strong> ${text}`;
+        
+        chatMessages.appendChild(msgDiv);
+        
+        // Auto-scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-  };
 
-  // --- 2. CHATBOX UI & FOCUS ---
-  window.toggleChat = function() {
-    const chat = document.getElementById("chat-box");
-    const isHidden = chat.style.display === "none" || chat.style.display === "";
-    chat.style.display = isHidden ? "flex" : "none";
-    if (isHidden) document.getElementById("chat-input").focus();
-  };
+    function getSmartResponse(input) {
+        // Comprehensive Keyword Matching
+        if (input.includes("course") || input.includes("learn") || input.includes("faculty")) {
+            return "We have 10 faculties covering <b>Java, Python, DevOps, Cloud, and Cybersecurity</b>. Which one peaks your interest?";
+        }
+        if (input.includes("price") || input.includes("cost") || input.includes("fee") || input.includes("much")) {
+            return "Our training is very affordable with flexible payment plans. For a custom quote, please click the <b>WhatsApp</b> button!";
+        }
+        if (input.includes("java")) {
+            return "Wisdom is an expert Java Instructor! We cover <b>Core Java, Spring Boot, and Microservices</b>.";
+        }
+        if (input.includes("devops") || input.includes("docker") || input.includes("k8s")) {
+            return "DevOps is our specialty. You'll learn to automate infrastructure using <b>Docker, Kubernetes, and Jenkins</b>.";
+        }
+        if (input.includes("contact") || input.includes("whatsapp") || input.includes("number")) {
+            return "You can reach Wisdom directly at <b>+234 703 915 3600</b> or via the WhatsApp link below.";
+        }
+        if (input.includes("hello") || input.includes("hi") || input.includes("hey")) {
+            return "Hello! I'm ready to guide you through the CypressWorld ecosystem. What's on your mind?";
+        }
+        
+        // Default Fallback
+        return "That's a great question! I'm still learning, but <b>Wisdom Amaju</b> can give you a detailed answer on WhatsApp.";
+    }
 
-  // --- 3. THE AI LOGIC ENGINE ---
-  window.sendChat = function() {
-    const input = document.getElementById("chat-input");
-    const msg = input.value.trim();
-    if (!msg) return;
+    // --- 4. FLOATING BUTTON SCROLL EFFECTS ---
+    // Subtly hide/show floating buttons based on scroll for cleaner mobile view
+    let lastScrollY = window.scrollY;
+    const floatingActions = document.querySelector(".floating-actions");
 
-    addMsg(msg, "user");
-    input.value = "";
-
-    // Simulate "Bot is typing" feel
-    setTimeout(() => {
-        const response = generateAIResponse(msg);
-        addMsg(response, "bot");
-    }, 800);
-  };
-
-
-
-typing-effect {
-  font-family: monospace;
-  display: inline-block;
-  overflow: hidden;
-  border-right: .15em solid orange;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-
-
-
-
-
-  
-  function addMsg(text, type) {
-    const container = document.getElementById("chat-messages");
-    const div = document.createElement("div");
-    div.className = `msg ${type}`;
-    div.innerHTML = text;
-    container.appendChild(div);
-    container.scrollTop = container.scrollHeight;
-  }
-
-  function generateAIResponse(text) {
-    const q = text.toLowerCase();
-    
-    // Pattern Matching Logic
-    if (q.includes("course") || q.includes("learn")) 
-        return "I lead 10 specialized faculties including <b>Full-Stack Dev</b>, <b>DevOps</b>, and <b>Cybersecurity</b>. Which one fits your goal?";
-    
-    if (q.includes("price") || q.includes("cost") || q.includes("pay")) 
-        return "We have flexible payment plans for students in Lagos and abroad. Click the <b>WhatsApp</b> button below for the full fee structure.";
-    
-    if (q.includes("java") || q.includes("spring")) 
-        return "Our Java track covers SE, Enterprise EE, and <b>Spring Boot</b>. It's the most requested skill for banking tech!";
-    
-    if (q.includes("devops") || q.includes("docker")) 
-        return "DevOps is the future. I'll teach you Docker, Kubernetes, and CI/CD automation from scratch.";
-
-    if (q.includes("hello") || q.includes("hi")) 
-        return "Hello! I am the CypressWorld Assistant. How can I guide your tech journey today?";
-
-    return "Interesting! I'd love to discuss that further. Try asking about our <b>courses</b> or <b>mentorship</b>.";
-  }
-
-  // Handle Enter Key
-  document.getElementById("chat-input")?.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") window.sendChat();
-  });
+    window.addEventListener("scroll", () => {
+        if (floatingActions) {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down - slightly fade
+                floatingActions.style.opacity = "0.8";
+            } else {
+                // Scrolling up - full visibility
+                floatingActions.style.opacity = "1";
+            }
+            lastScrollY = window.scrollY;
+        }
+    });
 });
